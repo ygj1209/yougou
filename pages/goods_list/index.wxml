@@ -1,2 +1,17 @@
-<!--pages/goods_list/index.wxml-->
-<text>pages/goods_list/index.wxml</text>
+
+<SearchInput></SearchInput>
+<!--切换栏-->
+<Tabs  bindTitleChange="handleTitleChange"  Tabs="{{Tabs}}">
+
+        <block  wx:if="{{Tabs[0].Tabscurrgoods}}">
+         内容
+    </block>
+    <block  wx:elif="{{Tabs[1].Tabscurrgoods}}">
+          无能力再开发。。。。。。
+    </block>
+    <block  wx:elif="{{Tabs[2].Tabscurrgoods}}">
+          无能力再开发。。。。。。
+    </block>
+
+      
+</Tabs>

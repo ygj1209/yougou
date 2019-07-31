@@ -1,0 +1,17 @@
+
+.goods_tabs {
+  display: flex;
+}
+.goods_tabs_title {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    color: #000;
+    padding: 10rpx;
+    font-size: 30rpx;
+}
+  .goods_tabs .active {
+    color: var(--themeColor);
+    border-bottom: 5rpx solid currentColor;
+ }

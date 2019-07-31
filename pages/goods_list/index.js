@@ -5,62 +5,28 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    Tabs:[
+      {id:0,title:"综合",Tabscurrgoods:true},
+      {id:1,title:"销量",Tabscurrgoods:false},
+      {id:2,title:"价格",Tabscurrgoods:false}
+    ],
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  //tab栏切换
+  handleTitleChange(e) {
+     // 先获取子组件传递过来的数据
+     const { index } = e.detail;
+      // 获取源数组
+        let { Tabs } = this.data;
+        Tabs.forEach((item,i)=>{
+        //判断
+        if(i===index) {
+           item.Tabscurrgoods=true
+        } else {
+          item.Tabscurrgoods=false
+        }
+     })
+     this.setData({
+        Tabs
+     })
   }
 })

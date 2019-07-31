@@ -26,7 +26,7 @@
 
               <!--电视之类的内容详细部分-->  
               <view class="goods_list">
-                  <navigator wx:for="{{item2.children}}" wx:for-item="item3" wx:for-index="index3" wx:key="cat_id"  url="" >
+                  <navigator wx:for="{{item2.children}}" wx:for-item="item3" wx:for-index="index3" wx:key="cat_id"  url="/pages/goods_list/index?cid={{item3.cat_id}}">
                           <image mode="widthFix"  src="{{item3.cat_icon}}" />
                           <view class="goods_name">
                            {{item3.cat_name}}</view>

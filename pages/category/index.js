@@ -50,7 +50,7 @@ Page({
       url:"/categories"
     })
     .then(res=>{
-      // console.log (res)
+      console.log (res)
       // 给全局参数 赋值
       this.Cates=res;
       let leftMenuList=this.Cates.map((item,index)=>({cat_name:item.cat_name,cat_id:item.cat_id}))
