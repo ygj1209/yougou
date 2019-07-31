@@ -1,1 +1,33 @@
-/* pages/index/index.wxss */
+.index_swiper swiper {
+  height: 340rpx;
+}
+.navs_index {
+  display: flex;
+}
+.navs_index navigator {
+  flex: 1;
+  padding: 30rpx;
+}
+.index_floot .floor_item .floor_title {
+  padding: 10rpx 0;
+}
+.index_floot .floor_item .floor_list {
+  /* 清除浮动  */
+  overflow: hidden;
+  padding: 0 10rpx;
+}
+.index_floot .floor_item .floor_list .floor_image {
+  width: 33.33%;
+  float: left;
+  /* 后两个超链接 */
+}
+.index_floot .floor_item .floor_list .floor_image:nth-last-child(-n+4) {
+  height: 207.97413793rpx;
+  border-left: 10rpx solid #fff;
+}
+.index_floot .floor_item .floor_list .floor_image:nth-last-child(-n+4) image {
+  height: 100%;
+}
+.index_floot .floor_item .floor_list .floor_image:nth-last-child(-n+2) {
+  border-top: 10rpx solid #fff;
+}
