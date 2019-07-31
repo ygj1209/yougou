@@ -1,5 +1,6 @@
 // pages/category/index.js
 import { request } from "../../request/index.js";
+import regeneratorRuntime from '../../lib/runtime/runtime';
 Page({
 
   /**
@@ -45,14 +46,14 @@ Page({
      }
   },
    
-  getcategories() {
-    request({
-      url:"/categories"
-    })
-    .then(res=>{
-      console.log (res)
+  async getcategories() {
+    const res=await request({url:"/categories"})
+  
+      
       // 给全局参数 赋值
       this.Cates=res;
+      // 把接口的数据存入到本地存储中 
+      wx.setStorageSync("cates", { time: Date.now(), data: this.Cates });
       let leftMenuList=this.Cates.map((item,index)=>({cat_name:item.cat_name,cat_id:item.cat_id}))
       //显示当前的菜单
       let rightGoodsList=this.Cates[0].children
@@ -60,7 +61,7 @@ Page({
         leftMenuList,
         rightGoodsList
       })
-    })
+
   },
   goods_category(e) {
      const {index}=e.currentTarget.dataset
