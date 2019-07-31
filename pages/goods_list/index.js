@@ -42,6 +42,8 @@ Page({
       this.setData({
         getgoods:[...this.data.getgoods,...res.goods]
       })
+      // 2 下拉刷新没有打开 也可以关闭 因为 没有操作 
+      wx.stopPullDownRefresh();
     })
   },
    //页面滚动到低处触发
@@ -49,13 +51,28 @@ Page({
     //判断当前总页数是否大于0
     if(this.QueryParams.pagenum>=this.TotalPages) {
         // 没有下一页数据
-      console.log("没有下一页数据");
+      wx.showToast({
+        title:"没有下一页数据",
+        icon: 'none'
+      })
     } else {
       this.QueryParams.pagenum++;
 
       this.aaaa
     }
   },
+    // 页面下拉刷新事件
+    onPullDownRefresh(){
+      // 1 重置 页码
+      // 2 重置data中的数组
+      // 3 重新发送请求
+  
+      this.QueryParams.pagenum=1;
+      this.setData({
+        getgoods:[]
+      })
+      this.aaaa();
+    },
   //tab栏切换
   handleTitleChange(e) {
      // 先获取子组件传递过来的数据
