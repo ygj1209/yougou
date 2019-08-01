@@ -1,5 +1,6 @@
 // pages/category/index.js
 import { request } from "../../request/index.js";
+import { getStorageCates, setStorageCates } from "../../util/storeage";
 import regeneratorRuntime from '../../lib/runtime/runtime';
 Page({
 
@@ -21,7 +22,7 @@ Page({
    */
   onLoad() {
       //发送请求之前判断一下有没有数据存储
-      let cates=wx.getStorageSync("cates")
+      let cates=getStorageCates()
       
       if (!cates) {
         //没有数据则执行
@@ -53,7 +54,7 @@ Page({
       // 给全局参数 赋值
       this.Cates=res;
       // 把接口的数据存入到本地存储中 
-      wx.setStorageSync("cates", { time: Date.now(), data: this.Cates });
+      setStorageCates( { time: Date.now(), data: this.Cates });
       let leftMenuList=this.Cates.map((item,index)=>({cat_name:item.cat_name,cat_id:item.cat_id}))
       //显示当前的菜单
       let rightGoodsList=this.Cates[0].children
