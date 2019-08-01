@@ -8,6 +8,7 @@
       <navigator class="goods_group"
       wx:for="{{getgoods}}"
       wx:key="goods_id"
+      url="/pages/goods_detail/index?goods_id={{item.goods_id}}"
       >
         <!-- 左侧图片 -->
         <view class="goods_img_wrap">
