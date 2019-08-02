@@ -17,6 +17,21 @@ Page({
      this.getGoodsDetail(options.goods_id)
 
   },
+
+  //点击图片放大预览
+  handlePreviewImage(e) {
+    //  console.log (e)
+     const {index}=e.currentTarget.dataset
+     //拿到数组里面的大图片
+     let urls=this.data.goodsObj.pics.map(item=>
+       item.pics_big
+     )
+     const current=urls[index];
+     wx.previewImage({
+      current, // 当前显示图片的http链接
+      urls // 需要预览的图片http链接列表
+    })
+  },
    
   //获取商品详情
   async getGoodsDetail(goods_id) {
