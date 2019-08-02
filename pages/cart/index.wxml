@@ -1,1 +1,7 @@
-325252525
+
+
+<view class="revice_wrap">
+  <view class="revice_btn_row">
+    <button type="primary" plain bindtap="handleChooseAddress" >获取收货地址</button>
+  </view>
+</view>
