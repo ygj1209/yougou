@@ -13,3 +13,6 @@ export const getStorageCates=()=>{
   export const setStorageCates=(obj)=>{
     wx.setStorageSync("cates", obj);
   }
+
+
+  
